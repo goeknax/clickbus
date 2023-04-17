@@ -35,8 +35,8 @@ Change database ports in docker-compose.yml and modify conecction in .env
 
 ## Images
 ![Pantalla de inicio](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
-![Consulta de conversion ](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
-![Historial de conversion](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
+![Consulta de conversion ](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index1.png)
+![Historial de conversion](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/log.png)
 
 ## Docs
 
