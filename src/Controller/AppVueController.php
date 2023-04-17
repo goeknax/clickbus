@@ -8,6 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AppVueController extends AbstractController
 {
+    /**
+     * Show main page for exchange
+     */
     #[Route('/index', name: 'index')]
     public function index(): Response
     {
