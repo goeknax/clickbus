@@ -15,6 +15,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use DateTime;
 
 class ExchangeController extends AbstractController
 {
@@ -29,8 +30,6 @@ class ExchangeController extends AbstractController
 
     /**
      * Stores exchange data
-     * @Request data to store
-     * return Response
      */
 
     #[Route('/save/log', name: 'save_log')]
@@ -40,12 +39,14 @@ class ExchangeController extends AbstractController
 
             $request = Request::createFromGlobals();
             $data = $request->toArray();
-
             $log = new ExchangeLog();
             $log->setOldAmount($data['old_amount']);
             $log->setOldCurrency($data['old_currency']);
             $log->setNewAmount($data['new_amount']);
             $log->setNewCurrency($data['new_currency']);
+            $log->setNewCurrency($data['new_currency']);
+            $log->setUuid($data['uuid']);
+            $log->setCreatedAt(new DateTime('now'));
 
             $entityManager->persist($log);
             $entityManager->flush();
@@ -69,13 +70,19 @@ class ExchangeController extends AbstractController
         try {
             $repository = $entityManager->getRepository(ExchangeLog::class);
             $logs = $repository->findBy([], ['id' => 'desc']);
+            $data = [];
+            
+            foreach ($logs as $l) {
+                $data[$l->getUuid()][] = [
+                    "old_amount" => $l->getOldAmount(),
+                    "old_currency" => $l->getOldCurrency(),
+                    "new_amount" => $l->getNewAmount(),
+                    "new_currency" => $l->getNewCurrency(),
+                    "created_at" => $l->getCreatedAt(),
+                ];
 
-            $encoders = [new JsonEncoder()];
-            $normalizers = [new ObjectNormalizer()];
-            $serializer = new Serializer($normalizers, $encoders);
-
-            $jsonContent = $serializer->serialize($logs, 'json');
-            return new JsonResponse($jsonContent, 201);
+            }
+            return new JsonResponse($data, 201);
         } catch (Exception $e) {
             return new Response((string) $e->getMessage(), 400);
         }

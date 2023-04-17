@@ -3,11 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\ExchangeLogRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use DateTime;
 
 #[ORM\Entity(repositoryClass: ExchangeLogRepository::class)]
 class ExchangeLog
 {
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -24,6 +27,12 @@ class ExchangeLog
 
     #[ORM\Column(length: 15)]
     private ?string $new_currency = null;
+
+    #[ORM\Column(type: Types::GUID)]
+    private ?string $uuid = null;
+
+    #[ORM\Column]
+    private ?\DateTime $created_at = null;
 
     public function getId(): ?int
     {
@@ -74,6 +83,30 @@ class ExchangeLog
     public function setNewCurrency(string $new_currency): self
     {
         $this->new_currency = $new_currency;
+
+        return $this;
+    }
+
+    public function getUuid(): ?string
+    {
+        return $this->uuid;
+    }
+
+    public function setUuid(string $uuid): self
+    {
+        $this->uuid = $uuid;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTime $created_at): self
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }

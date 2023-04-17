@@ -11,6 +11,7 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 import axios from "axios";
+import moment from 'moment'
 
 // assets/js/app.js
 import { createApp } from 'vue'

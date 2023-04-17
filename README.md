@@ -33,7 +33,10 @@ In order to change web server `symfony server:start --port=8080`
 Change database ports in docker-compose.yml and modify conecction in .env
 
 
-## Features
+## Images
+![Pantalla de inicio](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
+![Consulta de conversion ](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
+![Historial de conversion](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
 
 ## Docs
 
