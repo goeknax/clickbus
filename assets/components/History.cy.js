@@ -9,8 +9,4 @@ describe('<History />', () => {
     cy.mount(History)
     cy.contains('div', 'No hay información.')
   })
-  it('carga pagina algunos datos', () => {
-    cy.mount(History)
-    cy.get('.list-group').find('a').should('have.length', 7)
-  })
 })

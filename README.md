@@ -32,11 +32,16 @@ DataBase in Docker `5432`
 In order to change web server `symfony server:start --port=8080`
 Change database ports in docker-compose.yml and modify conecction in .env
 
+## Cypress test
+To Run test on Logs.vue `npx cypress open`, chose component testing, select your favorite web browser, click start Component Testing.
+In the new web page select in sidebar Specs, then click History.
+You will see two simple tests.
 
 ## Images
 ![Pantalla de inicio](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
 ![Consulta de conversion ](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index1.png)
 ![Historial de conversion](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/log.png)
+![Test](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/tests.png)
 
 ## Docs
 
