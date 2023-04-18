@@ -41,7 +41,7 @@ You will see two simple tests.
 ![Pantalla de inicio](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index.png)
 ![Consulta de conversion ](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/index1.png)
 ![Historial de conversion](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/log.png)
-![Test](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/tests.png)
+![Test](https://raw.githubusercontent.com/goeknax/clickbus/master/assets/img/test.png)
 
 ## Docs
 
