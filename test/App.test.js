@@ -1,8 +1,8 @@
 import Vue from "vue";
-import App from "../assets/componentes/History";
+import History from 'components/History';
 
 test('renders a todo', () => {
-  const wrapper = mount(App)
+  const wrapper = mount(History)
 
   const todo = wrapper.get('[data-test="todo"]')
 
